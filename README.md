@@ -1,8 +1,9 @@
 # Simon
 
-This is a simple memory game written with HTML, CSS and JS. It consists of four squares of different colours
-and the player have to remember the sequence created by the chosen square added at each level. Have fun and
-train your brain!
+This is a simple memory game written with HTML <img src="icons/html5-brands-solid.svg" width="15" height="15">,
+CSS <img src="icons/css-brands-solid.svg" width="15" height="15"> and JS <img src="icons/js-brands-solid.svg"
+width="15" height="15">. It consists of four squares of different colours and the player have to remember the
+sequence created by the chosen square added at each level. Have fun and train your brain!
 
 ## Really simple interface
 
