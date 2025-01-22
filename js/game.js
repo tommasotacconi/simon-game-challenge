@@ -36,7 +36,7 @@ function nextSequence() {
 }
 
 /**
- * Adds 'pressed' class to button of colour in argument 'currenColour'
+ * Adds 'pressed' class to button of colour in argument 'currentColour'
  * 
  * @param {string} currentColour 
  */
@@ -68,7 +68,7 @@ let level = 0;
 
 
 // PROCESSING PHASE
-// Checks whether the game has started or not before calling nextSequence
+// Checks whether the game has started or not, before calling nextSequence
 // function when a keyboard keys get pressed
 if (!level) {
 	$('body').on('keypress', nextSequence);
@@ -80,13 +80,19 @@ $('div.btn').on('click', function (e) {
 	animatePress(userChosenColour);
 	userClickedPattern.push(userChosenColour);
 	console.log(userClickedPattern);
-	// Checks if the added colour is correct remembering 
+	// Checks if the added colour is correct, considering that the 'currentLevel' argument
+	// corresponds to the index of the last answer given by the user, which is the one
+	// to verify
 	if (!checkAnswer(userClickedPattern.length - 1)) {
-		const newElement = $("<div id='result'></div>").text('Hai fatto un errore, riprova').css({color: '#fff', fontFamily: "'Press Start 2P', cursive"});
+		const newElement = $("<div id='result'></div>").text('Hai fatto un errore, riprova')
+		.css({color: '#fff', fontFamily: "'Press Start 2P', cursive"});
 		$('body').append(newElement);
 		$('.container').slideUp();
 		return
 	}
+	// Controls if a new level can be calculated, after 'nextSequence' is already
+	// increased by one, even if the user is still completing the sequence of
+	// level equal to 'level' - 1 
 	if (userClickedPattern.length === level) {
 		userClickedPattern.length = 0;
 		setTimeout(nextSequence, 2000);
