@@ -7,7 +7,7 @@
  */
 function playSound(name) {
 // Reproduce audio
-	const audio = new Audio('../sounds/' + name + '.mp3');
+	const audio = new Audio('./../sounds/' + name + '.mp3');
 	audio.play();	
 }
 
@@ -92,7 +92,6 @@ $('div.btn').on('click', function (e) {
 	playSound(userChosenColour);
 	animatePress(userChosenColour);
 	userClickedPattern.push(userChosenColour);
-	console.log(userClickedPattern);
 	// Checks if the added colour is correct, considering that the 'currentLevel' argument
 	// corresponds to the index of the last answer given by the user, which is the one
 	// to verify
