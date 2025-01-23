@@ -14,8 +14,6 @@ function playSound(name) {
 /**
  * Return a integer number between 0 and 3 and shows the square
  * related to the number to the user with animation and given sound
- * 
- * @returns {Number}
 */
 function nextSequence() {
 	if (!level) $('body').off('keypress');
@@ -96,8 +94,7 @@ $('div.btn').on('click', function (e) {
 	// corresponds to the index of the last answer given by the user, which is the one
 	// to verify
 	if (!checkAnswer(userClickedPattern.length - 1)) {
-		const audio = new Audio('../sounds/wrong.mp3');
-		audio.play();
+		playSound('wrong');
 		$('body').addClass('game-over');
 		$('h1').text('Game-over');
 		setTimeout(function () {
